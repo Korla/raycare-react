@@ -14,6 +14,8 @@
     "redux-devtools": "^3.3.2"
   },
   "devDependencies": {
+    "@types/react-redux": "^4.4.38",
+    "@types/redux": "^3.6.0",
     "react-scripts-ts": "1.1.8"
   },
   "scripts": {
