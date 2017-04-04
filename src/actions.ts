@@ -2,29 +2,12 @@
  * actions
  */
 
-class Action {
-  constructor(public type: string) { }
-}
-
-export class AddTodoAction extends Action {
-  public static TYPE = 'ADD_TODO';
-  constructor(public text: string) {
-    super(AddTodoAction.TYPE);
-  }
-}
-
-export class ToggleTodoAction extends Action {
-  public static TYPE = 'TOGGLE_TODO';
-  constructor(public index: number) {
-    super(ToggleTodoAction.TYPE);
-  }
-}
-
-export class SetVisibilityFilterAction extends Action {
-  public static TYPE = 'TOGGLE_TODO';
-  constructor(public filter: string) {
-    super(SetVisibilityFilterAction.TYPE);
-  }
+export const Actions = {
+  ADD_TODO: 'ADD_TODO',
+  TOGGLE_TODO: 'TOGGLE_TODO',
+  SET_VISIBILITY_FILTER: 'SET_VISIBILITY_FILTER',
+  SET_LIGHT: 'SET_LIGHT',
+  SET_LIGHT_DELAYED: 'SET_LIGHT_DELAYED'
 }
 
 /*
@@ -41,13 +24,21 @@ export const VisibilityFilters = {
  * action creators
  */
 export function addTodo(text: string) {
-  return new AddTodoAction(text);
+  return { type: Actions.ADD_TODO, text }
 }
 
 export function toggleTodo(index: number) {
-  return new ToggleTodoAction(index);
+  return { type: Actions.TOGGLE_TODO, index }
 }
 
 export function setVisibilityFilter(filter: string) {
-  return new SetVisibilityFilterAction(filter);
+  return { type: Actions.SET_VISIBILITY_FILTER, filter }
+}
+
+export function setLight(isOn: boolean) {
+  return { type: Actions.SET_LIGHT, isOn }
+}
+
+export function setLightDelayed(isOn: boolean) {
+  return { type: Actions.SET_LIGHT_DELAYED, isOn }
 }

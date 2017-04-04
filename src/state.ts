@@ -7,4 +7,5 @@ export interface ITodo {
 export interface State {
   todos: ITodo[];
   visibilityFilter: string;
+  isOn: boolean;
 }
