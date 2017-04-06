@@ -20,7 +20,7 @@ const styles = {
   turnedOn: {
     backgroundColor: 'green'
   }
-}
+};
 
 export default class Test extends React.Component<TestProps, void> {
   static propTypes = {
@@ -38,8 +38,8 @@ export default class Test extends React.Component<TestProps, void> {
     return (
       <div>
         <button onClick={() => this.props.onClick(!this.props.isOn)}>{text}</button>
-        <span style={{ ...styles.light, ...style }}></span>
+        <span style={{ ...styles.light, ...style }} />
       </div>
-    )
+    );
   }
 }
