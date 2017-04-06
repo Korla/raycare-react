@@ -1,6 +1,6 @@
 import 'rxjs';
 import { combineEpics, ActionsObservable } from 'redux-observable';
-import { Actions, setLight } from './actions';
+import { Actions, setLight } from '../actions';
 
 const isOnEpic = (action$: ActionsObservable<any>) =>
   action$
@@ -8,8 +8,6 @@ const isOnEpic = (action$: ActionsObservable<any>) =>
     .delay(500)
     .map(action => setLight(action.isOn));
 
-const rootEpic = combineEpics(
+export const epics = combineEpics(
   isOnEpic
 );
-
-export default rootEpic;
