@@ -15,9 +15,9 @@ const getVisibleTodos = (todos: ITodo[], filter: string) => {
   }
 };
 
-const mapStateToProps = (state: State) => {
+const mapStateToProps = (state: State, ownProps: any) => {
   return {
-    todos: getVisibleTodos(state.todos, state.visibilityFilter)
+    todos: getVisibleTodos(state.todos, ownProps.filter)
   };
 };
 
@@ -29,7 +29,7 @@ const mapDispatchToProps = (dispatch: Dispatch<void>) => {
   };
 };
 
-const VisibleTodoList = connect(
+const VisibleTodoList = connect<any, any, any>(
   mapStateToProps,
   mapDispatchToProps
 )(TodoList);

@@ -4,10 +4,12 @@ import AddTodo from '../containers/AddTodo';
 import TestContainer from '../containers/TestContainer';
 import VisibleTodoList from '../containers/VisibleTodoList';
 
-const App = () => (
+const App = ({ params }: any) => (
   <div>
     <AddTodo />
-    <VisibleTodoList />
+    <VisibleTodoList
+      filter={params.filter || 'all'}
+    />
     <TestContainer />
     <Footer />
   </div>
