@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect, Dispatch } from 'react-redux';
-import { BookingState } from '../index';
+import { BookingState } from '../state';
 import { addAgeDelayed } from '../actions';
 
 interface NameAndAgeProps {

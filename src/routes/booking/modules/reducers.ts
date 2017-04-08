@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { BookingState } from '../index';
+import { BookingState } from '../state';
 import { Actions } from '../actions';
 
 const name = (state: string = 'A name', action: any) => {

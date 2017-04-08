@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router';
-import { BookingState } from './index';
+import { BookingState } from './state';
 
 export default class BookingApp extends React.Component<BookingState, void> {
   render() {
