@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Route } from 'react-router';
 import { SubApp } from '../../common/index';
-import reducer from './reducer';
+import { reducers, epics } from './modules';
 import BookingApp from './app';
 import NameAndAge from './views/nameAndAge';
 
@@ -11,7 +11,7 @@ export interface BookingState {
   people: string[];
 }
 
-const ConnectedBookingApp = SubApp<BookingState, void>(reducer, BookingApp);
+const ConnectedBookingApp = SubApp<BookingState, void>(reducers, epics, BookingApp);
 
 export default (
   <Route path="/booking" component={ConnectedBookingApp}>

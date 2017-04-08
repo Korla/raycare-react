@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Reducer } from 'redux';
+import { Reducer, createStore, Store, applyMiddleware } from 'redux';
+import { createEpicMiddleware, Epic } from 'redux-observable';
 import { Provider } from 'react-redux';
-import { createStore, Store } from 'redux';
 
 export function SubApp<ReducerState, Props>(
   reducer: Reducer<ReducerState>,
+  epic: Epic<ReducerState, Props>,
   WrappedApp: new () => React.Component<ReducerState, void>
 ) {
   return class extends React.Component<Props, ReducerState> {
@@ -12,7 +13,8 @@ export function SubApp<ReducerState, Props>(
 
     constructor(props: Props) {
       super(props);
-      this.store = createStore<ReducerState>(reducer);
+      const epicMiddleware = createEpicMiddleware(epic);
+      this.store = createStore<ReducerState>(reducer, applyMiddleware(epicMiddleware));
     }
 
     render() {
