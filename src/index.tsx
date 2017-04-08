@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { Router, browserHistory, Route } from 'react-router';
 import { render } from 'react-dom';
-import App from './common/app';
+import { app } from './common';
 
 import BookingRoutes from './routes/booking';
 
 render(
   <div>
     <Router history={browserHistory}>
-      <Route path="/" component={App}>
+      <Route path="/" component={app}>
         {BookingRoutes}
       </Route>
     </Router>

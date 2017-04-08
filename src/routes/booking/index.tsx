@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Route } from 'react-router';
-import { SubApp } from '../../common/index';
+import { SubApp } from '../../common';
 import { reducers, epics } from './modules';
 import BookingApp from './app';
 import NameAndAge from './views/nameAndAge';
