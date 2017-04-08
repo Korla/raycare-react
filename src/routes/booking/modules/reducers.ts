@@ -1,7 +1,22 @@
+import { combineReducers } from 'redux';
 import { BookingState } from '../index';
+import { Actions } from '../actions';
 
-export const reducers = (): BookingState => ({
-  name: 'A name',
-  age: 10,
-  people: ['JB', 'HL']
-});
+const name = (state: string = 'A name', action: any) => {
+  return state;
+};
+
+const age = (state: number = 10, action: any) => {
+  switch (action.type) {
+    case Actions.ADD_AGE:
+      return state + 1;
+    default:
+      return state;
+  }
+};
+
+const people = (state: string[] = ['JB', 'HL'], action: any) => {
+  return state;
+};
+
+export const reducers = combineReducers<BookingState>({ name, age, people });
