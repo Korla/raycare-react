@@ -1,7 +1,9 @@
 import * as React from 'react';
+import { Route } from 'react-router';
 import { SubApp } from '../../common/index';
-import NameAndAge from './nameAndAge';
 import reducer from './reducer';
+import BookingApp from './app';
+import NameAndAge from './views/nameAndAge';
 
 export interface BookingState {
   name: string;
@@ -9,10 +11,10 @@ export interface BookingState {
   people: string[];
 }
 
-class BookingApp extends React.Component<BookingState, void> {
-  render() {
-    return <NameAndAge />;
-  }
-}
+const ConnectedBookingApp = SubApp<BookingState, void>(reducer, BookingApp);
 
-export default SubApp<BookingState, void>(reducer, BookingApp);
+export default (
+  <Route path="/booking" component={ConnectedBookingApp}>
+    <Route path="/booking/nameandage" component={NameAndAge} />
+  </Route>
+);

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { BookingState } from './index';
+import { BookingState } from '../index';
 
 class NameAndAge extends React.Component<{ name: string, age: number }, void> {
   render() {
