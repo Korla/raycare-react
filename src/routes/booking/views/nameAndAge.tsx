@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect, Dispatch } from 'react-redux';
 import { BookingState } from '../index';
-import { addAge } from '../actions';
+import { addAgeDelayed } from '../actions';
 
 interface NameAndAgeProps {
   name: string;
@@ -28,7 +28,7 @@ const mapStateToProps = ({ name, age }: BookingState) => ({ name, age });
 const mapDispatchToProps = (dispatch: Dispatch<void>) => {
   return {
     addAge: () => {
-      dispatch(addAge());
+      dispatch(addAgeDelayed());
     }
   };
 };
