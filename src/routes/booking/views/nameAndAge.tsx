@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect, Dispatch } from 'react-redux';
+import { Panel } from '../../../common';
 import { BookingState } from '../state';
 import { addAgeDelayed } from '../actions';
 
@@ -15,10 +16,13 @@ interface NameAndAgeDispatch {
 class NameAndAge extends React.Component<NameAndAgeProps & NameAndAgeDispatch, void> {
   render() {
     return (
-      <div>
-        Name: {this.props.name}, Age: {this.props.age}
-        <button onClick={this.props.addAge}>Add</button>
-      </div>
+      <Panel>
+        <div>A panel</div>
+        <div>
+          Name: {this.props.name}, Age: {this.props.age}
+          <button onClick={this.props.addAge}>Add</button>
+        </div>
+      </Panel>
     );
   }
 }

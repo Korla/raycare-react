@@ -1,10 +1,19 @@
 import * as React from 'react';
-import { Link } from 'react-router';
+import Header from './Header';
+
+const style = {
+  position: 'absolute',
+  right: 0,
+  left: 0,
+  top: 0,
+  bottom: 0,
+  display: 'flex',
+  flexDirection: 'column' as 'column'
+};
 
 export const app = (props: any) => (
-  <div>
-    <Link to="/" activeClassName="active">Home</Link>
-    <Link to="/booking" activeClassName="active">Booking</Link>
+  <div style={style}>
+    <Header />
     {props.children}
   </div>
 );
