@@ -1,17 +1,17 @@
 import * as React from 'react';
+import './index.css';
 
 const style = {
-  background: '#777',
+  background: '#333',
   padding: 10,
   display: 'flex',
-  flexDirection: 'column' as 'column',
   flex: 1
 };
 
-export class Panel extends React.Component<void, void> {
+export class Page extends React.Component<void, void> {
   render() {
     return (
-      <div style={style}>
+      <div style={style} className="rc-page">
         {this.props.children}
       </div>
     );

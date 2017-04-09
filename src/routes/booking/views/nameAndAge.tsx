@@ -16,8 +16,7 @@ interface NameAndAgeDispatch {
 class NameAndAge extends React.Component<NameAndAgeProps & NameAndAgeDispatch, void> {
   render() {
     return (
-      <Panel>
-        <div>A panel</div>
+      <Panel title="Name and age">
         <div>
           Name: {this.props.name}, Age: {this.props.age}
           <button onClick={this.props.addAge}>Add</button>
@@ -27,9 +26,9 @@ class NameAndAge extends React.Component<NameAndAgeProps & NameAndAgeDispatch, v
   }
 }
 
-const mapStateToProps = ({ name, age }: BookingState) => ({ name, age });
+const mapStateToProps = ({ name, age }: BookingState): NameAndAgeProps => ({ name, age });
 
-const mapDispatchToProps = (dispatch: Dispatch<void>) => {
+const mapDispatchToProps = (dispatch: Dispatch<void>): NameAndAgeDispatch => {
   return {
     addAge: () => {
       dispatch(addAgeDelayed());

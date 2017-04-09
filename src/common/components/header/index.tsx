@@ -4,8 +4,8 @@ import { Link } from 'react-router';
 const style = {
   root: {
     display: 'flex',
-    justifyContent: 'space-around' as 'space-around',
-    background: '#777'
+    background: '#777',
+    paddingLeft: 40
   },
   link: {
     padding: 10,
