@@ -15,7 +15,7 @@ const style = {
 
 export default (props: any) => (
   <div style={style.root}>
-    <Link style={style.link} to="/" activeClassName="active">Home</Link>
+    <Link style={style.link} to="/home" activeClassName="active">Home</Link>
     <Link style={style.link} to="/booking" activeClassName="active">Booking</Link>
   </div>
 );

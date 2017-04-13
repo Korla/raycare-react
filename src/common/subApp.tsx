@@ -3,7 +3,7 @@ import { Reducer, createStore, Store, applyMiddleware } from 'redux';
 import { createEpicMiddleware, Epic } from 'redux-observable';
 import { Provider } from 'react-redux';
 
-export function SubApp<ReducerState, Props>(
+export function subApp<ReducerState, Props>(
   reducer: Reducer<ReducerState>,
   epic: Epic<ReducerState, Props>,
   WrappedApp: new () => React.Component<ReducerState, void>
