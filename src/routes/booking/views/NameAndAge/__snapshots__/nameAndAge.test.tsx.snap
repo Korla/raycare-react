@@ -1,0 +1,49 @@
+exports[`test nameAndAge snapshot test 1`] = `
+<div
+  style={
+    Object {
+      "background": "#777",
+      "display": "flex",
+      "flex": 1,
+      "flexDirection": "column",
+    }
+  }>
+  <div
+    className="panel-header"
+    style={
+      Object {
+        "borderBottom": "1px solid white",
+        "padding": 10,
+      }
+    }>
+    <span
+      style={
+        Object {
+          "cursor": "pointer",
+          "textDecoration": "underline",
+        }
+      }>
+      Name and age
+    </span>
+  </div>
+  <div
+    style={
+      Object {
+        "padding": 10,
+      }
+    }>
+    <div>
+      <span>
+        Name: 
+        A name
+        , Age: 
+        5
+      </span>
+      <button
+        onClick={[Function]}>
+        Add
+      </button>
+    </div>
+  </div>
+</div>
+`;
