@@ -1,7 +1,11 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
-import { NameAndAge } from './nameAndAge';
+import { NameAndAge, NameAndAgeProps, NameAndAgeDispatch } from './nameAndAge';
+
+interface JSXTestSetup {
+  jsx: JSX.Element;
+}
 
 test('nameAndAge renders the name and age', () => {
   // Arrange
@@ -26,7 +30,7 @@ test('nameAndAge snapshot test', () => {
   expect(tree).toMatchSnapshot();
 });
 
-function setup() {
+function setup(): NameAndAgeProps & NameAndAgeDispatch & JSXTestSetup {
   const name = 'A name';
   const age = 5;
   const addAge = () => undefined;
