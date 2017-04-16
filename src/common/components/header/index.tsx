@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const style = {
   root: {
@@ -9,13 +9,35 @@ const style = {
   },
   link: {
     padding: 10,
-    color: 'white'
+    color: 'white',
+    textDecoration: 'none'
+  },
+  active: {
+    textDecoration: 'underline'
   }
 };
 
+const links = [
+  {
+    to: '/home',
+    label: 'Home'
+  },
+  {
+    to: '/booking',
+    label: 'Booking'
+  }
+];
+
 export default (props: any) => (
   <div style={style.root}>
-    <Link style={style.link} to="/home">Home</Link>
-    <Link style={style.link} to="/booking">Booking</Link>
+    {links.map(({ to, label }) => (
+      <NavLink
+        key={to}
+        style={style.link}
+        activeStyle={style.active}
+        to={to}>
+        {label}
+      </NavLink>
+    ))}
   </div>
 );
