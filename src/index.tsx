@@ -11,9 +11,9 @@ import HomeRoutes from './routes/home';
 render(
   <BrowserRouter>
     <App>
-      <Redirect from="/" to="home" />
       {BookingRoutes}
       {HomeRoutes}
+      <Redirect to="/home" />
     </App>
   </BrowserRouter>,
   document.getElementById('root')
