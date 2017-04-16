@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Page } from '../../common/components/page/index';
-import { Route } from 'react-router';
+import { Route } from 'react-router-dom';
 import { Panel } from '../../common/components/panel/panel';
 
 class HomeApp extends React.Component<void, void> {

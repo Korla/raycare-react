@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Router, browserHistory, Route, Redirect } from 'react-router';
+import { BrowserRouter, Redirect } from 'react-router-dom';
 import { render } from 'react-dom';
-import { app } from './common';
+import { App } from './common';
 
 import './app.css';
 
@@ -9,14 +9,12 @@ import BookingRoutes from './routes/booking';
 import HomeRoutes from './routes/home';
 
 render(
-  <div>
-    <Router history={browserHistory}>
+  <BrowserRouter>
+    <App>
       <Redirect from="/" to="home" />
-      <Route path="/" component={app}>
-        {BookingRoutes}
-        {HomeRoutes}
-      </Route>
-    </Router>
-  </div>,
+      {BookingRoutes}
+      {HomeRoutes}
+    </App>
+  </BrowserRouter>,
   document.getElementById('root')
 );

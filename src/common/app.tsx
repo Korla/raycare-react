@@ -11,7 +11,7 @@ const style = {
   flexDirection: 'column' as 'column'
 };
 
-export const app = (props: any) => (
+export const App = (props: any) => (
   <div style={style}>
     <Header />
     {props.children}

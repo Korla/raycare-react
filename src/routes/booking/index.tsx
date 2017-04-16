@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Route } from 'react-router';
+import { Route } from 'react-router-dom';
 import { subApp } from '../../common';
 import { reducers, epics } from './modules';
 import BookingApp from './app';

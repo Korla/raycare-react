@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const style = {
   root: {
@@ -15,7 +15,7 @@ const style = {
 
 export default (props: any) => (
   <div style={style.root}>
-    <Link style={style.link} to="/home" activeClassName="active">Home</Link>
-    <Link style={style.link} to="/booking" activeClassName="active">Booking</Link>
+    <Link style={style.link} to="/home">Home</Link>
+    <Link style={style.link} to="/booking">Booking</Link>
   </div>
 );
